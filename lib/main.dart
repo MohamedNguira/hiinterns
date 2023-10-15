@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiinterns/login.dart';
 import 'package:hiinterns/signup.dart';
 
 void main() {
@@ -11,13 +12,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: const MyHomePage(),
     );
   }
@@ -30,15 +24,20 @@ class MyHomePage extends StatefulWidget {
 
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
 
-
+  static int state = 0;
   @override
   Widget build(BuildContext context) {
+    Widget screen = SignUpPage(f: (){setState(() {
 
-    return Scaffold(body: SignUpPage(),);
+    });});
+    if(state == 1)screen = LoginPage(f:(){setState(() {
+
+    });});
+    return Scaffold(body: screen,);
   }
 }

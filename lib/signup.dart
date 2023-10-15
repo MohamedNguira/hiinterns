@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hiinterns/main.dart';
 
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
-
+  SignUpPage({super.key,required this.f});
+  Function f;
 
 
 
@@ -20,7 +21,7 @@ class SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height,w = MediaQuery.of(context).size.width;
 
-    return Center(child: SizedBox(width: w * 0.9,child:ListView(children: [
+    return Center(child:SizedBox(width: w * 0.9,child:SingleChildScrollView(child: Column( crossAxisAlignment: CrossAxisAlignment.center,children: [
       SizedBox(height: h * 0.02,),
       Image.asset("images/logotext.png",width: w * 0.5,height: h * 0.04,),
       SizedBox(height: h * 0.02,),
@@ -36,19 +37,45 @@ class SignUpPageState extends State<SignUpPage> {
         this.accepted = value!;
       });}),conditions],),
       SizedBox(height: h * 0.04,),
-      TextButton(onPressed: (){}, child: Text("S'inscrire", style: TextStyle(
+      TextButton(onPressed: (){MyHomePageState.state = 2;widget.f();},style: TextButton.styleFrom(
+          backgroundColor: Color(0xff0f0a3c),
+          fixedSize: Size(w *0.7,h * 0.08),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+      ), child:Text("S'inscrire", style: TextStyle(
         color: Colors.white,
         fontSize: 20,
         fontFamily: 'Poppins',
         fontWeight: FontWeight.w600,
-      ),))
+      ),)),
 
-
-    ],),));
+      SizedBox(height: h * 0.02,),
+      Text(
+        'Ou connectez avec ',
+        style: TextStyle(
+          color: Color(0xFF807A7A),
+          fontSize: 16,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+      SizedBox(height: h * 0.02,),
+      Row(mainAxisAlignment: MainAxisAlignment.center,children: [Image.asset("images/google.png", height: h * 0.05,),SizedBox(width: w * 0.25,),Image.asset("images/linkedin.png",height: h * 0.05),],)
+     , SizedBox(height: h * 0.02,),
+      Row(mainAxisAlignment:MainAxisAlignment.center,children: [Text(
+        'Vous avez déjà un compte ?',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 16,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.w500,
+        ),
+      ), TextButton(onPressed: (){MyHomePageState.state = 1;widget.f();}, child: Text("Connexion"))],)
+    ],),)));
   }
 
   Widget conditions = SizedBox(
-    width: 320,
+    width: 300,
     height: 26,
     child: Text.rich(
 
