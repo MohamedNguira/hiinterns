@@ -21,8 +21,8 @@ class InternListState extends State<InternList> {
   List<Widget> internships = [
     Internship(logo:"1", name: 'Stage en finance', place: "Express FM - Tunis", desc: "Description of the internship. The internship is Good and the whether is better.Good test,good good test", lastpub: "Publié il y a 2 jours", topics: ["Finance" , "Budgétisation","Analyse financière"]),
     SizedBox(height: 20,)
-  ,Internship(logo:"1", name: 'Stage en finance', place: "Express FM - Tunis", desc: "Description of the internship. The internship is Good and the whether is better.Good test,good good test", lastpub: "Publié il y a 2 jours", topics: ["Finance" , "Budgétisation","Analyse financière"])
-   , SizedBox(height: 20,) ,Internship(logo:"1", name: 'Stage en finance', place: "Express FM - Tunis", desc: "Description of the internship. The internship is Good and the whether is better.Good test,good good test", lastpub: "Publié il y a 2 jours", topics: ["Finance" , "Budgétisation","Analyse financière"])
+  ,Internship(logo:"2", name: 'Stage en recrutement IT', place: "Smart Conseil - Ariana", desc: "Description of the internship. The internship is Good and the whether is better.Good test,good good test", lastpub: "Publié il y a 2 jours", topics: ["Gestion des ressources humaines." , "Management"])
+   , SizedBox(height: 20,) ,Internship(logo:"3", name: 'Stage web development', place: "Olindias - Monastir", desc: "Description of the internship. The internship is Good and the whether is better.Good test,good good test", lastpub: "Publié il y a 2 jours", topics: ["HTML" , "CSS","JavaScript"])
 
   ];
   static double h=0,w=0;

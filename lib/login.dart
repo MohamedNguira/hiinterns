@@ -63,7 +63,7 @@ class LoginPageState extends State<LoginPage> {
       TextField( obscureText: true,decoration:InputDecoration(labelText: "Entrer votre mot de passe",filled:true,fillColor: Color(0x1f81b1f8),border: inputborder),style: inputstyle,),
 
       SizedBox(height: h * 0.04,),
-      TextButton(onPressed: (){MyHomePageState.state = 2;widget.f();},style: TextButton.styleFrom(
+      TextButton(onPressed: (){MyHomePageState.state = 3;widget.f();},style: TextButton.styleFrom(
           backgroundColor: Color(0xff0f0a3c),
           fixedSize: Size(w *0.7,h * 0.08),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))

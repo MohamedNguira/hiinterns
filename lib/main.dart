@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiinterns/company.dart';
 import 'package:hiinterns/internlist.dart';
 import 'package:hiinterns/login.dart';
 import 'package:hiinterns/signup.dart';
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const MyHomePage(),
     );
   }
@@ -39,7 +41,9 @@ class MyHomePageState extends State<MyHomePage> {
     if(state == 1)screen = LoginPage(f:(){setState(() {
 
     });});
-    if(state == 2)screen = InternList();
+    if(state == 2)return  Scaffold(backgroundColor:state >= 2? Color(0xfff6ffdb):Colors.white,body: InternList(),);
+    if(state == 3) return Scaffold(backgroundColor: Color(0xfff5f7ff),body: CompanyPage());
+
     return Scaffold(backgroundColor:state >= 2? Color(0xfff6ffdb):Colors.white,body: screen,);
   }
 }
