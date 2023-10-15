@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiinterns/internlist.dart';
 import 'package:hiinterns/login.dart';
 import 'package:hiinterns/signup.dart';
 
@@ -38,6 +39,7 @@ class MyHomePageState extends State<MyHomePage> {
     if(state == 1)screen = LoginPage(f:(){setState(() {
 
     });});
-    return Scaffold(body: screen,);
+    if(state == 2)screen = InternList();
+    return Scaffold(backgroundColor:state >= 2? Color(0xfff6ffdb):Colors.white,body: screen,);
   }
 }
